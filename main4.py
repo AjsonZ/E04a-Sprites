@@ -16,24 +16,24 @@ class MyGame(arcade.Window):
         file_path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(file_path)
         arcade.set_background_color(open_color.white)
-        self.tree_list = arcade.SpriteList()
+        self.car_list = arcade.SpriteList()
 
 
     def setup(self):
-        trees = ['tree1','tree2','tree3','tree4','tree5','tree6','tree7','tree8','tree9','tree10']
+        cars = ['bus','kart','police','buggy','ambulance','bus_school','hotdog','scooter','station','cycle']
 
         for i in range(20):
-            tree = random.choice(trees)
+            car = random.choice(cars)
             x = random.randint(0,800)
             y = random.randint(0,600)
-            self.tree_sprite = arcade.Sprite("PNG/{tree}.png".format(tree=tree), 0.5)
-            self.tree_sprite.center_x = x
-            self.tree_sprite.center_y = y
-            self.tree_list.append(self.tree_sprite)     
+            self.car_sprite = arcade.Sprite("Cars/{car}.png".format(car=car), 0.5)
+            self.car_sprite.center_x = x
+            self.car_sprite.center_y = y
+            self.car_list.append(self.car_sprite)     
 
     def on_draw(self):
         arcade.start_render()
-        self.tree_list.draw()
+        self.car_list.draw()
         pass
 
 
@@ -42,9 +42,9 @@ class MyGame(arcade.Window):
 
 
     def on_mouse_motion(self, x, y, dx, dy):
-        for i in self.tree_list:
-            self.tree_sprite.center_x = x
-            self.tree_sprite.center_y = y
+        for i in self.car_list:
+            self.car_sprite.center_x = x
+            self.car_sprite.center_y = y
         pass
 
 def main():
