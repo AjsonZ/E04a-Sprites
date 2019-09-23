@@ -32,12 +32,12 @@ class MyGame(arcade.Window):
         self.animal_list.draw()
 
 
-    def update(self, delta_time):
-        pass
-
-
     def on_mouse_motion(self, x, y, dx, dy):
+        for i in self.animal_list:
+            self.animal_sprite.center_x = x
+            self.animal_sprite.center_y = y
         pass
+
 
 def main():
     """ Main method """
