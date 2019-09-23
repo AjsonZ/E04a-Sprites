@@ -24,12 +24,14 @@ class MyGame(arcade.Window):
 
         for i in range(20):
             car = random.choice(cars)
-            x = random.randint(0,800)
-            y = random.randint(0,600)
-            self.car_sprite = arcade.Sprite("Cars/{car}.png".format(car=car), 2)
-            self.car_sprite.center_x = x
-            self.car_sprite.center_y = y
-            self.car_list.append(self.car_sprite)     
+            for i in range(10):
+                x = random.randint(0,i)
+                y = random.randint(0,600)
+                self.car_sprite = arcade.Sprite("Cars/{car}.png".format(car=car), 2)
+                self.car_sprite.center_x = x
+                self.car_sprite.center_y = y
+                self.car_list.append(self.car_sprite)
+                
 
     def on_draw(self):
         arcade.start_render()
